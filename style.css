@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  svg {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background: #f0f0f0;
+  }
+  
+  /* Flag node styling */
+  .node {
+    width: 16px;
+    height: 11px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: all;
+    cursor: grab;
+  }
+  
