@@ -15,7 +15,7 @@ d3.json("https://raw.githubusercontent.com/DealPete/forceDirected/master/countri
 
     // Create simulation
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.code))
+      .force("link", d3.forceLink(links))
       .force("charge", d3.forceManyBody().strength(-50))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
