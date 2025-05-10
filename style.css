@@ -1,25 +1,49 @@
 body {
   margin: 0;
-  overflow: hidden;
+  overflow: hidden; /* Keep overflow hidden for the graph */
+  display: flex; /* Use flexbox to arrange SVG and info section */
+  flex-direction: column; /* Stack SVG and info section vertically */
   }
   
   svg {
   width: 100vw;
-  height: 100vh;
+  height: 100vh; /* SVG takes full viewport height */
   display: block;
   background: #f0f0f0;
   }
   
-  /* Flag node styling - More specific selector */
+  /* Flag node styling - More specific selector for reliability */
   .node.flag-icon {
-  position: absolute;
-  width: 24px; /* Explicit width */
+  position: absolute; /* Essential for D3 positioning */
+  width: 24px; /* Explicit width for flags */
   height: 18px; /* Explicit height (4:3 ratio) */
-  pointer-events: all;
-  cursor: grab;
-  transform: translate(-50%, -50%); /* Center the element */
-  background-size: contain;
-  background-repeat: no-repeat;
-  /* Ensure display is not inline-block if flag-icon-css sets it */
-  display: block;
+  pointer-events: all; /* Allows mouse events for dragging and hover */
+  cursor: grab; /* Visual feedback for draggable elements */
+  transform: translate(-50%, -50%); /* Center the element on its simulation coordinates */
+  background-size: contain; /* Ensure the flag image fits within the element */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  display: block; /* Ensure it behaves like a block element */
   }
+  
+  /* Style for the Information Section */
+  #info-section {
+  position: absolute; /* Position over the SVG */
+  bottom: 10px; /* 10px from the bottom */
+  left: 10px; /* 10px from the left */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: sans-serif; /* Readable font */
+  font-size: 12px;
+  pointer-events: none; /* Ignore mouse events so they don't interfere with the graph */
+  z-index: 10; /* Ensure it's above the SVG */
+  }
+  
+  #info-section p {
+  margin: 3px 0; /* Small margin for paragraphs */
+  }
+
+  #info-section a {
+    pointer-events: auto; /* Override for links: allow mouse events */
+    }
