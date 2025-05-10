@@ -1,23 +1,21 @@
 body {
-    margin: 0;
-    overflow: hidden;
+   margin: 0;
+  overflow: hidden;
+   }
+  
+   svg {
+   width: 100vw;
+   height: 100vh;
+   display: block;
+   background: #f0f0f0;
   }
   
-  svg {
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    background: #f0f0f0;
+ /* Flag node styling */
+img.node {
+  position: absolute; /* Keep absolute positioning for D3 */
+      width: 32px; /* Set the width of the image */
+      height: 32px; /* Set the height of the image (match the size in the URL) */
+  pointer-events: all; /* Keep for drag interaction */
+  cursor: grab; /* Keep for visual feedback */
+      /* No background properties needed for <img> tags */
   }
-  
-  /* Flag node styling */
-  .node {
-    width: 16px;
-    height: 11px;
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    pointer-events: all;
-    cursor: grab;
-  }
-  
