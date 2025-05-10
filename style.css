@@ -1,21 +1,23 @@
 body {
-   margin: 0;
+  margin: 0;
   overflow: hidden;
-   }
-  
-   svg {
-   width: 100vw;
-   height: 100vh;
-   display: block;
-   background: #f0f0f0;
   }
   
- /* Flag node styling */
-img.node {
-  position: absolute; /* Keep absolute positioning for D3 */
-      width: 32px; /* Set the width of the image */
-      height: 32px; /* Set the height of the image (match the size in the URL) */
-  pointer-events: all; /* Keep for drag interaction */
-  cursor: grab; /* Keep for visual feedback */
-      /* No background properties needed for <img> tags */
+  svg {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: #f0f0f0;
+  }
+  
+  /* Flag node styling */
+  .node {
+  position: absolute;
+  width: 24px; /* Explicit width */
+  height: 18px; /* Explicit height (4:3 ratio) */
+  pointer-events: all;
+  cursor: grab;
+  transform: translate(-50%, -50%); /* Center the element on its simulation coordinates */
+  background-size: contain; /* Ensure the flag image fits within the element */
+  background-repeat: no-repeat; /* Prevent image repetition */
   }
