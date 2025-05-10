@@ -15,8 +15,8 @@ const links = data.links;
 
 // Create simulation
 const simulation = d3.forceSimulation(nodes)
-.force("link", d3.forceLink(links).id(d => d.index).distance(40)) // Link force with distance
-.force("charge", d3.forceManyBody().strength(-20)) // Charge force (repulsion)
+.force("link", d3.forceLink(links).id(d => d.index).distance(30)) // Adjusted link distance
+.force("charge", d3.forceManyBody().strength(-10)) // Further reduced repulsive strength
 .force("center", d3.forceCenter(width / 2, height / 2)); // Center force
 
 // Draw links (lines)
@@ -35,8 +35,8 @@ const node = d3.select("body").append("div")
 .data(nodes)
 .enter()
 .append("div")
-.attr("class", d => `node flag-icon flag-icon-${d.code.toLowerCase()}`) // Apply node and flag-icon classes
-.attr("title", d => d.country) // Add tooltip for country name
+.attr("class", d => `node flag-icon flag-icon-${d.code.toLowerCase()}`) // Apply classes
+.attr("title", d => d.country) // Add tooltip
 .call(drag(simulation)); // Apply drag behavior
 
 // On each tick, update positions

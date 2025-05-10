@@ -10,14 +10,16 @@ body {
   background: #f0f0f0;
   }
   
-  /* Flag node styling */
-  .node {
+  /* Flag node styling - More specific selector */
+  .node.flag-icon {
   position: absolute;
   width: 24px; /* Explicit width */
   height: 18px; /* Explicit height (4:3 ratio) */
   pointer-events: all;
   cursor: grab;
-  transform: translate(-50%, -50%); /* Center the element on its simulation coordinates */
-  background-size: contain; /* Ensure the flag image fits within the element */
-  background-repeat: no-repeat; /* Prevent image repetition */
+  transform: translate(-50%, -50%); /* Center the element */
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* Ensure display is not inline-block if flag-icon-css sets it */
+  display: block;
   }
